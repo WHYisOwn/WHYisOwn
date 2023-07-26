@@ -1701,7 +1701,7 @@ local af = ToggleAutofarm.MouseButton1Click:Connect(function()
     local afspeed = tonumber(AutofarmSpeed.Text)
     if afspeed then
         getgenv().afs = afspeed
-        if getgenv().afs>32 then getgenv().afs=32 AutofarmSpeed.Text="32" elseif getgenv().afs<1 then getgenv().afs=1 AutofarmSpeed.Text="1" end
+        if getgenv().afs>100 then getgenv().afs=100 AutofarmSpeed.Text="100" elseif getgenv().afs<1 then getgenv().afs=1 AutofarmSpeed.Text="1" end
     end
     et()
     if getgenv().af then
