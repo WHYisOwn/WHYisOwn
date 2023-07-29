@@ -81,20 +81,6 @@ if not game.Lighting:FindFirstChild("Texture") then
     texture.Transparency = 0.8
 end
 
-if not workspace:FindFirstChild("Baseplate1") then
-    local bs1 = workspace.Baseplate:Clone()
-    bs1.Parent = workspace
-    bs1.Name = "Baseplate1"
-    bs1.Position = Vector3.new(100000,100000,100000)
-end
-
-if not workspace:FindFirstChild("SafePart1") then
-    local sf1 = workspace["Safe Part"]:Clone()
-    sf1.Parent = workspace
-    sf1.Name = "SafePart1"
-    sf1.Position = Vector3.new(100000,100000,100000)
-end
-
 if not game.ReplicatedStorage:FindFirstChild("g") then
 local bgui = Instance.new("BillboardGui",game.ReplicatedStorage)
 local text1 = Instance.new("TextLabel",bgui)
