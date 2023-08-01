@@ -1,0 +1,53 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Skibidi Toliet Siege Defense", HidePremium = false, SaveConfig = true, ConfigFolder = "Welcome"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "AutoShoot",
+	Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Owner1213/Scripts/main/AutoShootskibidisiege'),true))()
+      		print("Hi")
+  	end    
+})
+
+Tab:AddButton({
+        Name = "Esp",
+    	Default = false,
+	    Callback = function(Value)
+    		if Value == true then
+    		    for i,v in pairs(game.Workspace.Level.Actors:GetChildren()) do
+                    if v.Character.HumanoidRootPart:FindFirstChild("Solutions") then
+                        print("Sub To Solutions")
+                    else
+                        local BillboardGui = Instance.new('BillboardGui')
+    	                local TextLabel = Instance.new('TextLabel')
+
+BillboardGui.Parent = v.Character.HumanoidRootPart
+    	                BillboardGui.AlwaysOnTop = true
+    	                BillboardGui.Size = UDim2.new(0, 50, 0, 50)
+                    	BillboardGui.StudsOffset = Vector3.new(0,2,0)
+                    	BillboardGui.Name = "Solutions"
+    	
+                	    TextLabel.Parent = BillboardGui
+                	    TextLabel.BackgroundColor3 = Color3.new(1,1,1)
+                	    TextLabel.BackgroundTransparency = 1
+                        TextLabel.Size = UDim2.new(1, 0, 1, 0)
+                    	TextLabel.Text = "Toliet"
+                    	TextLabel.TextColor3 = Color3.new(1, 1, 1)
+    	                TextLabel.TextScaled = true
+	                end
+    		    end
+    		elseif Value == false then
+    		    for i,v in pairs(game.Workspace.Level.Actors:GetChildren()) do
+                    if v.Character.HumanoidRootPart:FindFirstChild("Solutions") then
+                        v.Character.HumanoidRootPart.Solutions:Destroy()
+                    end
+    		    end
+    		end
+    	end
+    })
