@@ -1,0 +1,4 @@
+-- Made By gagghigggg
+-- Knokout Script
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/WHYisOwn/WHYisOwn/main/TEST%20OBF'))()
