@@ -1,0 +1,70 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Knokout Simulator", HidePremium = false, SaveConfig = true, ConfigFolder = "Welcome"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Inf Strong",
+	Callback = function(val)
+      		game:GetService("ReplicatedStorage").Event.Train:FireServer(99e999999999999999999999999)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Inf Wins",
+	Callback = function(val)
+      		game:GetService("ReplicatedStorage").Event.WinGain:FireServer(99e99999999999999999999)
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Creator",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Made By WHY_Own",
+	Callback = function(val)
+      		-- Create a screen GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create a text label
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0, 200, 0, 50)
+textLabel.Position = UDim2.new(0.5, -100, 0.5, -25)
+textLabel.BackgroundTransparency = 1
+textLabel.Font = Enum.Font.SourceSans
+textLabel.TextColor3 = Color3.new(1, 1, 1)
+textLabel.TextScaled = true
+textLabel.Text = "Welcome to Roblox!"
+textLabel.Parent = screenGui
+
+-- Function to update the text of the label
+local function updateText(newText)
+    textLabel.Text = newText
+end
+
+-- Call the updateText function with a new text
+updateText("Hello, User!")
+
+-- Use the updateText function to change the text
+wait(2) -- A delay before changing the text
+updateText("This is WHY Script!")
+
+-- Repeat the process
+wait(2)
+updateText("Enjoy creating amazing games!")
+
+-- Remove the GUI after a certain time
+wait(5) -- A delay before removing the GUI
+screenGui:Destroy()
+  	end    
+})
+
+OrionLib:Init()
