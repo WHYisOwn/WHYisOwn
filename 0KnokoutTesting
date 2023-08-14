@@ -565,7 +565,7 @@ T_2.BorderSizePixel = 0
 T_2.Position = UDim2.new(0.491823435, 0, -0.471403331, 0)
 T_2.Size = UDim2.new(1, 0, 0.909090936, 0)
 T_2.Font = Enum.Font.SourceSans
-T_2.Text = "Autofarm Speed (1-30)"
+T_2.Text = "Autofarm Speed (1-35)"
 T_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 T_2.TextScaled = true
 T_2.TextSize = 14.000
@@ -1701,7 +1701,7 @@ local af = ToggleAutofarm.MouseButton1Click:Connect(function()
     local afspeed = tonumber(AutofarmSpeed.Text)
     if afspeed then
         getgenv().afs = afspeed
-        if getgenv().afs>30 then getgenv().afs=30 AutofarmSpeed.Text="30" elseif getgenv().afs<1 then getgenv().afs=1 AutofarmSpeed.Text="1" end
+        if getgenv().afs>35 then getgenv().afs=35 AutofarmSpeed.Text="35" elseif getgenv().afs<1 then getgenv().afs=1 AutofarmSpeed.Text="1" end
     end
     et()
     if getgenv().af then
