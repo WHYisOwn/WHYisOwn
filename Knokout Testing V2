@@ -1,0 +1,235 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "<font color='#b5b5b5'>REPLICATEDSTORAGE'S KNOCKOUT UI</font> // <font color='#b5b5b5'>V.1.4</font>", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Autofarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Tab2 = Window:MakeTab({
+	Name = "Character",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
+	Name = "Local Only",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab5 = Window:MakeTab({
+	Name = "Stats",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
+	Name = "Update Log",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+local Tab3 = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+OrionLib:MakeNotification({
+	Name = "                WELCOME",
+	Content = "Welcome! Enjoy this UI!",
+	Image = "rbxassetid://0",
+	Time = 5
+})
+local Interval
+Tab:AddTextbox({
+    Name = "Interval",
+    Default = "0.1",
+    TextDisappear = false,
+    Callback = function(Value)
+        Interval = Value
+        if Value == "0.01" or Value == "0.02" or Value == "0.03" or Value == "0.04" or Value == "0.05" or Value == "0.06" or Value == "0.07" or Value == "0.08" or Value == "0.09" then
+    OrionLib:MakeNotification({
+	Name = "        INTERVAL WARNING",
+	Content = "Some low devices won't handle low intervals! Make sure to use 0.1 or more if you have a device that doesn't handle fast spamming.",
+	Image = "rbxassetid://0",
+	Time = 15
+       })
+        end
+    end
+})
+
+Tab:AddButton({
+	Name = "Turn On Autofarm",
+	Callback = function()
+    OrionLib:MakeNotification({
+	Name = "AUTOFARM",
+	Content = "Autofarm is on, unequip to stop.",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+       local player = game.Players.LocalPlayer
+            for i = 0, math.huge, 1 do --se repetera 10 fois
+ player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+  player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+   player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+    player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+     player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+      player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+       player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+       player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+  player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+   player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+    player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+     player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+      player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+       player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+       player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+  player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+   player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+    player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+     player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+      player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+       player.Character:FindFirstChildWhichIsA("Tool").ExpRemote:FireServer()
+    task.wait(Interval)
+end
+end
+})
+local WalkSpeed
+local JumpPower
+Tab2:AddToggle({
+	Name = "Sit",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+        game.Players.LocalPlayer.Character.Humanoid.Sit = true
+        elseif Value == false then
+        game.Players.LocalPlayer.Character.Humanoid.Sit = false
+        end    
+        end
+})
+
+Tab2:AddToggle({
+	Name = "Platform Stand",
+	Default = false,
+	Callback = function(Value)
+		if Value == true then
+        game.Players.LocalPlayer.Character.Humanoid.PlatformStand = true
+        elseif Value == false then
+        game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false
+        end    
+        end
+})
+
+Tab2:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 100,
+	Default = 16,
+	Color = Color3.fromRGB(125,125,125),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+    WalkSpeed = Value
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+         Value = WalkSpeed
+	end    
+})
+
+Tab4:AddTextbox({
+    Name = "Custom Music (ID Required)",
+    Default = "1837362419",
+    TextDisappear = false,
+    Callback = function(Value)
+        workspace.Music.SoundId = "rbxassetid://"..Value
+    end
+})
+
+Tab4:AddButton({
+	Name = "Reset Music",
+	Callback = function()
+    OrionLib:MakeNotification({
+	Name = "                   MUSIC",
+	Content = "Successfully reseted the music! (Id : 1837362419)",
+	Image = "rbxassetid://0",
+	Time = 30
+})
+workspace.Music.SoundId = "rbxassetid://1837362419"
+end
+})
+ local valueoflevelstime = 0
+Tab5:AddButton({
+	Name = "Stats Revelation",
+	Callback = function()
+valueoflevelstime += 1
+local people = game.Players:GetChildren()
+  local e1 = Tab5:AddLabel("                                            ----"..valueoflevelstime.."----")
+for i, people in pairs(people) do
+ local e = Tab5:AddParagraph(people.Name.." ("..people.Character.Humanoid.DisplayName..")", "Level : "..people.StatsFolder.Level.Value.. ", Damage : "..people.StatsFolder.Level.Value*5 .. ", HP : "..people.StatsFolder.Level.Value*25)
+ end
+end
+})
+
+
+Tab4:AddSlider({
+	Name = "Clock Time",
+	Min = 0,
+	Max = 24,
+	Default = 14,
+	Color = Color3.fromRGB(125,125,125),
+	Increment = 0.01,
+	ValueName = "",
+	Callback = function(Value)
+        game.Lighting.ClockTime = Value
+    end    
+})
+
+Tab2:AddSlider({
+	Name = "Jumppower",
+	Min = 0,
+	Max = 1000,
+	Default = 50,
+	Color = Color3.fromRGB(125,125,125),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(Value)
+    JumpPower = Value
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+        Value = JumpPower
+	end    
+})
+
+Tab2:AddButton({
+	Name = "Reset Walkspeed",
+	Callback = function()
+        OrionLib:MakeNotification({
+	Name = "               WALKSPEED",
+	Content = "Successfully Resetted the Walkspeed! (16)",
+	Image = "rbxassetid://0",
+	Time = 5
+})
+WalkSpeed = 16
+    	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        end
+})
+
+Tab2:AddButton({
+	Name = "Reset Jumppower",
+	Callback = function()
+        OrionLib:MakeNotification({
+	Name = "               JUMPPOWER",
+	Content = "Successfully Resetted the Jumppower! (50)",
+	Image = "rbxassetid://0",
+	Time = 5
+})
+JumpPower = 50
+    	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        end
+})
+
+Tab3:AddParagraph("CREDITS","Scripting - gagghigggg (@3H4o5ward6The)\nLibrary - Orion Lib\nThank you for using this UI!")
+Tab6:AddParagraph("UPDATE V.1.4", '•New Title Style!\n•Interval Added In Autofarm Section!\n•Added Platform Stand in Character Section!\n•Changed Slider Colors!\n•Centered Notification Titles!\n \nLike I said in the Preview, here is some Tweaks in UI and other Scripts!')
+Tab6:AddParagraph("PREVIEW ON V.1.5", "I don't really know.. Well see you in the next update.")
+
+local OrionLib = loadstring(game:HttpGet(('https://hypernite.xyz/Backup/Orion/source.lua')))() -- Backed up to my host
