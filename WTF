@@ -1,0 +1,100 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Sword World", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local TabMain = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://2128976198",
+    PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+    Name = "Bot",
+    Content = "Welcome Made by WHY",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+TabMain:AddToggle({
+    Name = "AutoFarm",
+    Default = false,
+    Callback = function(Value)
+        while Value do
+            wait(0.25)
+            local args1 = {
+                [1] = game:GetService("Players").LocalPlayer.Character.sword,
+                [2] = 1
+            }
+            workspace.GivePower.RemoteEvent:FireServer(unpack(args1))
+            wait(0.25)
+            local args2 = {
+                [1] = game:GetService("Players").LocalPlayer.Character.sword,
+                [2] = 2
+            }
+            workspace.GivePower.RemoteEvent:FireServer(unpack(args2))
+        end
+    end
+})
+
+TabMain:AddToggle({
+    Name = "Kill Boss",
+    Default = false,
+    Callback = function(Value)
+        while Value do
+            wait(0.25)
+            local args = {
+                [1] = workspace.BOSS.BOSS1.RightUpperLeg,
+                [2] = game:GetService("Players").LocalPlayer.Character.sword
+            }
+            workspace.Damage.RemoteEvent:FireServer(unpack(args))
+        end
+    end
+})
+
+TabMain:AddButton({
+    Name = "Get All Rewards",
+    Callback = function()
+        local rewards = {
+            {delay = 1, power = "+5,000 Power"},
+            {delay = 2, power = "+15,000 Power"},
+            {delay = 3, power = "Firework Aura"},
+            {delay = 4, power = "+25,000 Power"},
+            {delay = 5, power = "Wormhole Aura"},
+            {delay = 6, power = "+40,000 Power"},
+            {delay = 7, power = "Nature's Bliss Aura"},
+            {delay = 8, power = "+75,000 Power"},
+            {delay = 9, power = "Red Nuke Aura"},
+            {delay = 10, power = "+250,000 Power"},
+            {delay = 11, power = "Eternal Lightning Aura"}
+        }
+        for _, reward in ipairs(rewards) do
+            wait(reward.delay)
+            local args = {[1] = reward.power}
+            workspace.AuraHandler2.RemoteEvent:FireServer(unpack(args))
+        end
+    end
+})
+
+TabMain:AddButton({
+    Name = "TP to King",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-123, 20, 164)
+    end
+})
+
+TabMain:AddButton({
+    Name = "TP to rebirth zone",
+    Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(244, -226, 231)
+    end
+})
+
+TabMain:AddToggle({
+    Name = "Loop Speed 30",
+    Default = false,
+    Callback = function(Value)
+        while Value do 
+            wait()
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30
+        end
+    end    
+})
