@@ -1,0 +1,50 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "free rewards fo jason", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddButton({
+    Name = "Get All Rewards",
+    Callback = function()
+        local rewards = {
+            {delay = 1, power = "+5,000 Power"},
+            {delay = 2, power = "+15,000 Power"},
+            {delay = 3, power = "Firework Aura"},
+            {delay = 4, power = "+25,000 Power"},
+            {delay = 5, power = "Wormhole Aura"},
+            {delay = 6, power = "+40,000 Power"},
+            {delay = 7, power = "Nature's Bliss Aura"},
+            {delay = 8, power = "+75,000 Power"},
+            {delay = 9, power = "Red Nuke Aura"},
+            {delay = 10, power = "+250,000 Power"},
+            {delay = 11, power = "Eternal Lightning Aura"}
+        }
+        for _, reward in ipairs(rewards) do
+            wait(reward.delay)
+            local args = {[1] = reward.power}
+            workspace.AuraHandler2.RemoteEvent:FireServer(unpack(args))
+        end
+    end
+})
