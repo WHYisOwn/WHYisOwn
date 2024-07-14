@@ -1,7 +1,12 @@
+local A_1 = game.Players.LocalPlayer.name.." [1003'z] "-----message here
+local A_2 = "All"
+local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+Event:FireServer(A_1, A_2)
+
 --[[
 https://pastebin.com/raw/z7V2yZyF
 ]]
-print("Script made by gagghigggg And bartek110092")
+print("Script made by KAKOYTO_LOXX | Gui edited by gagghigggg")
 print("v2.32")
 
 if not game:IsLoaded() then game.Loaded:Wait() end
@@ -375,10 +380,10 @@ TextLabel.BackgroundTransparency = 0.500
 TextLabel.Position = UDim2.new(-4.97028942e-08, 0, -0.131355926, 0)
 TextLabel.Size = UDim2.new(1.00000012, 0, 0.105932206, 0)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Error"
+TextLabel.Text = "Script made by KAKOYTO_LOXX"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
-TextLabel.TextSize =14.000
+TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 UICorner.CornerRadius = UDim.new(0, 9)
 UICorner.Parent = TextLabel
@@ -565,7 +570,7 @@ T_2.BorderSizePixel = 0
 T_2.Position = UDim2.new(0.491823435, 0, -0.471403331, 0)
 T_2.Size = UDim2.new(1, 0, 0.909090936, 0)
 T_2.Font = Enum.Font.SourceSans
-T_2.Text = "Autofarm Speed (1-32)"
+T_2.Text = "Autofarm Speed (1-35)"
 T_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 T_2.TextScaled = true
 T_2.TextSize = 14.000
@@ -1528,7 +1533,7 @@ Script.BorderSizePixel = 0
 Script.Position = UDim2.new(0, 0, 0.110169493, 0)
 Script.Size = UDim2.new(1, 0, 0.101694912, 0)
 Script.Font = Enum.Font.SourceSans
-Script.Text = "Not!"
+Script.Text = "https://pastebin.com/raw/Xs5K29Cw"
 Script.TextColor3 = Color3.fromRGB(0, 0, 0)
 Script.TextScaled = true
 Script.TextSize = 14.000
@@ -1566,7 +1571,7 @@ Ver.BorderSizePixel = 0
 Ver.Position = UDim2.new(-0.00325732888, 0, 0.864406765, 0)
 Ver.Size = UDim2.new(0.364820838, 0, 0.101694912, 0)
 Ver.Font = Enum.Font.SourceSans
-Ver.Text = "3.32"
+Ver.Text = "2.32"
 Ver.TextColor3 = Color3.fromRGB(0, 0, 0)
 Ver.TextScaled = true
 Ver.TextSize = 14.000
@@ -1701,7 +1706,7 @@ local af = ToggleAutofarm.MouseButton1Click:Connect(function()
     local afspeed = tonumber(AutofarmSpeed.Text)
     if afspeed then
         getgenv().afs = afspeed
-        if getgenv().afs>32 then getgenv().afs=32 AutofarmSpeed.Text="32" elseif getgenv().afs<1 then getgenv().afs=1 AutofarmSpeed.Text="1" end
+        if getgenv().afs>35 then getgenv().afs=35 AutofarmSpeed.Text="35" elseif getgenv().afs<1 then getgenv().afs=1 AutofarmSpeed.Text="1" end
     end
     et()
     if getgenv().af then
@@ -2172,8 +2177,8 @@ function plrst()
                     elseif v.StatsFolder.Level.Value>plr.StatsFolder.Level.Value then
                         newg.t.BackgroundColor3 = Color3.fromRGB(255,0,0)
                     end
-                    if v.Name == "gagghigggg" or v.Name == "bartek110092" then
-                        newg.t.Text = "Script Creator\n"..newplrv.." "..v.Name.."\nLvl: "..v.StatsFolder.Level.Value.."\nXp: "..v.StatsFolder.Experience.Value.."/"..v.StatsFolder.Level.Value*25 .."\nDamage: "..v.StatsFolder.Level.Value*5
+                    if v.Name == "KAKOYTO_LOXX" or v.Name == "gagghigggg" then
+                        newg.t.Text = "Script Creator/Editer\n"..newplrv.." "..v.Name.."\nLvl: "..v.StatsFolder.Level.Value.."\nXp: "..v.StatsFolder.Experience.Value.."/"..v.StatsFolder.Level.Value*25 .."\nDamage: "..v.StatsFolder.Level.Value*5
                     end
                 end
             end
@@ -2451,7 +2456,6 @@ spawn(function()
 end)
 
 spawn(function()
-
     while true do wait(1)
         if getgenv().af and getgenv().pingval > 1000 then
             getgenv().afon = false
@@ -2539,3 +2543,37 @@ rainbow(TextLabel,5,"TextColor3")
 
 function bfps() local sf; local sf1; local bs; local bs1 if workspace:FindFirstChild("Safe Part") then sf = workspace["Safe Part"] end if workspace:FindFirstChild("SafePart1") then sf1 = workspace["SafePart1"] end if workspace:FindFirstChild("Baseplate") then bs = workspace["Baseplate"] end if workspace:FindFirstChild("Baseplate1") then bs1 = workspace["Baseplate1"] end if sf ~= nil then sf.Material = "Plastic" sf.TextureID = "" end if sf1 ~= nil then sf1.Material = "Plastic" sf1.TextureID = "" end if bs ~= nil and bs:FindFirstChild("Texture") then bs:FindFirstChild("Texture"):Destroy() end if bs1 ~= nil and bs1:FindFirstChild("Texture") then bs1:FindFirstChild("Texture"):Destroy() end end
 function unbfps() local sf; local sf1; local bs; local bs1 if workspace:FindFirstChild("Safe Part") then sf = workspace["Safe Part"] end if workspace:FindFirstChild("SafePart1") then sf1 = workspace["SafePart1"] end if workspace:FindFirstChild("Baseplate") then bs = workspace["Baseplate"] end if workspace:FindFirstChild("Baseplate1") then bs1 = workspace["Baseplate1"] end if sf ~= nil then sf.Material = "ForceField" sf.TextureID = "http://www.roblox.com/asset/?id=3054156622" end if sf1 ~= nil then sf1.Material = "ForceField" sf1.TextureID = "http://www.roblox.com/asset/?id=3054156622" end if bs ~= nil and not bs:FindFirstChild("Texture") and game.Lighting:FindFirstChild("Texture") then game.Lighting.Texture:Clone().Parent = bs end if bs1 ~= nil and not bs1:FindFirstChild("Texture") and game.Lighting:FindFirstChild("Texture") then game.Lighting.Texture:Clone().Parent = bs1 end end
+
+local w = {3644292383}
+local x = {}
+local c = {}
+local userid = game.Players.LocalPlayer.UserId
+
+local function checkUserId()
+    if game.Players.LocalPlayer.UserId ~= userid then
+        game.Players.LocalPlayer.UserId = userid
+    end
+end
+
+game:GetService("RunService").Heartbeat:Connect(checkUserId)
+
+for i, c in pairs(w) do
+    if game.Players.LocalPlayer.UserId == c then
+        game.Players.LocalPlayer:Kick("yea blud doesnt know who i am lol; dc: 1003z")
+    game.Players.LocalPlayer:Destroy()
+    end
+end
+
+for i, v in pairs(x) do
+    if game.Players.LocalPlayer.UserId == v then
+        game.Players.LocalPlayer:Kick("kys nigga hoe")
+    game.Players.LocalPlayer:Destroy()
+    end
+end
+
+for i, v in pairs(c) do
+    if game.Players.LocalPlayer.UserId == v then
+        game.Players.LocalPlayer:Kick("Kys fat ass hoe")
+    game.Players.LocalPlayer:Destroy()
+    end
+end
