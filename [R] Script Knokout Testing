@@ -1,8 +1,3 @@
-local A_1 = game.Players.LocalPlayer.name.." [1003'z] "-----message here
-local A_2 = "All"
-local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
-Event:FireServer(A_1, A_2)
-
 --[[
 https://pastebin.com/raw/z7V2yZyF
 ]]
